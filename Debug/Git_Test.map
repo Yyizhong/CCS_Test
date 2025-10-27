@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Mon Oct 27 21:06:43 2025
+>> Linked Mon Oct 27 21:15:20 2025
 
 OUTPUT FILE NAME:   <Git_Test.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0000010f
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
   BEGIN                 00000000   00000002  00000000  00000002  RWIX
-  RAMM0                 000000f5   0000030b  000000fa  00000211  RWIX
+  RAMM0                 000000f5   0000030b  00000103  00000208  RWIX
   RAMLS0                00008000   00000800  00000000  00000800  RWIX
   RAMLS1                00008800   00000800  00000000  00000800  RWIX
   RAMLS2                00009000   00000800  00000000  00000800  RWIX
@@ -57,25 +57,25 @@ section   page    origin      length       input sections
                   0000a806    00000002                       : _lock.c.obj (.ebss:__lock)
                   0000a808    00000002                       : _lock.c.obj (.ebss:__unlock)
 
-.text      0    0000010f    000000e0     
+.text      0    0000010f    000000e9     
                   0000010f    00000056     rts2800_fpu32.lib : boot28.asm.obj (.text)
                   00000165    00000029                       : exit.c.obj (.text)
                   0000018e    00000024                       : cpy_tbl.c.obj (.text)
                   000001b2    0000001d                       : memcpy.c.obj (.text)
                   000001cf    00000012                       : args_main.c.obj (.text)
-                  000001e1    00000009                       : _lock.c.obj (.text)
-                  000001ea    00000002     main.obj (.text)
-                  000001ec    00000002     rts2800_fpu32.lib : pre_init.c.obj (.text)
-                  000001ee    00000001                       : startup.c.obj (.text)
+                  000001e1    0000000b     main.obj (.text)
+                  000001ec    00000009     rts2800_fpu32.lib : _lock.c.obj (.text)
+                  000001f5    00000002                       : pre_init.c.obj (.text)
+                  000001f7    00000001                       : startup.c.obj (.text)
 
 MODULE SUMMARY
 
        Module            code   initialized data   uninitialized data
        ------            ----   ----------------   ------------------
     .\
-       main.obj          2      0                  0                 
+       main.obj          11     0                  0                 
     +--+-----------------+------+------------------+--------------------+
-       Total:            2      0                  0                 
+       Total:            11     0                  0                 
                                                                      
     D:\TI\CodeComposerStudio12.7\Projects\ccs\tools\compiler\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu32.lib
        boot28.asm.obj    86     0                  0                 
@@ -91,7 +91,7 @@ MODULE SUMMARY
                                                                      
        Stack:            0      0                  512               
     +--+-----------------+------+------------------+--------------------+
-       Grand Total:      224    24                 522               
+       Grand Total:      233    24                 522               
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -129,18 +129,18 @@ abs   ffffffff  ___pinit__
 abs   ffffffff  ___text__                       
 0     000001cf  __args_main                     
 1     0000a806  __lock                          
-0     000001e9  __nop                           
-0     000001e5  __register_lock                 
-0     000001e1  __register_unlock               
+0     000001f4  __nop                           
+0     000001f0  __register_lock                 
+0     000001ec  __register_unlock               
 1     00000400  __stack                         
-0     000001ee  __system_post_cinit             
-0     000001ec  __system_pre_init               
+0     000001f7  __system_post_cinit             
+0     000001f5  __system_pre_init               
 1     0000a808  __unlock                        
 0     00000165  _abort                          
 0     0000010f  _c_int00                        
 0     0000018e  _copy_in                        
 0     00000167  _exit                           
-0     000001ea  _main                           
+0     000001e1  _main                           
 0     000001b2  _memcpy                         
 abs   ffffffff  binit                           
 0     000000f5  cinit                           
@@ -161,12 +161,12 @@ page  address   name
 0     0000018e  _copy_in                        
 0     000001b2  _memcpy                         
 0     000001cf  __args_main                     
-0     000001e1  __register_unlock               
-0     000001e5  __register_lock                 
-0     000001e9  __nop                           
-0     000001ea  _main                           
-0     000001ec  __system_pre_init               
-0     000001ee  __system_post_cinit             
+0     000001e1  _main                           
+0     000001ec  __register_unlock               
+0     000001f0  __register_lock                 
+0     000001f4  __nop                           
+0     000001f5  __system_pre_init               
+0     000001f7  __system_post_cinit             
 1     00000400  __stack                         
 1     00000600  __STACK_END                     
 1     0000a800  ___TI_enable_exit_profile_output
